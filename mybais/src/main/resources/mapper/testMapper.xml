@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ <mapper namespace="com.gsk.mybatis.mapper.TeachMapper">
+    <select id="findAll" resultType="com.gsk.mybatis.pojo.Teachplan">
+        select * from teachplan
+    </select>
+
+    <insert id="insert" parameterType="com.gsk.mybatis.pojo.Teachplan">
+        insert into teachplan (id, pname, parentid, grade, ptype, description,
+        timelength, courseid, orderby, status, trylearn) value (#{id}, #{pname}, #{parentid},
+        #{grade}, #{ptype}, #{description},#{timelength}, #{courseid}, #{orderby}, #{status}, #{trylearn})
+
+        <!-- 用来返回主键自动回写到对象<selectKey keyProperty="表中id变量名" keyColumn="数据库中id列名" resultType="String" order="AFTER">
+            select last_insert_id()
+        </selectKey>-->
+
+    </insert>
+
+    <update id="update" parameterType="com.gsk.mybatis.pojo.Teachplan">
+        update  teachplan set pname=#{panme},status=#{status} where id =#{id}
+    </update>
+
+
+    <delete id="delete" parameterType="String">
+        delete from teachplan where  id =#{a}
+    </delete>
+
+
+    <!--条件查询-->
+    <select id="selectById" parameterType="String" resultType="com.gsk.mybatis.pojo.Teachplan">
+        select * from  teachplan where  id = #{b}
+    </select>
+
+
+    <select id="selectByPnameLike" parameterType="String" resultType="com.gsk.mybatis.pojo.Teachplan">
+
+        select * from  teachplan  where  pname like #{b}
+
+        <!-- 注意这种方式不能用  容易产生SQL注入问题  select * from  teachplan  where  pname like  '%${b}%'-->
+
+    </select>
+
+    <select id="selectTotal" resultType="Long">
+        select count(id) from  teachplan
+    </select>
+
+
+    <!--复杂输入-->
+    <!--vo必须包含了查询对象.传入的类型是vo 可以跟22行对比看-->
+    <select id="selectByVo" parameterType="TeachVo" resultType="Teachplan">
+
+        select * from  teachplan  where  pname like #{teachplan.pname}
+
+    </select>
+
+    <!--复杂输出-->
+
+
+
+    <!--动态sql-->
+    <!--动态条件 2种写法-->
+    <select id="selectByCondition" parameterType="Teachplan" resultType="Teachplan">
+        select * from  teachplan where  1=1
+        <if test=" pname!= null">
+            and pname = #{pname}
+        </if>
+
+        <if test=" grade!= null">
+            and grade = #{grade}
+        </if>
+        <!--select * from  teachplan
+        <where>
+        <if test=" pname!= null">
+            and pname = #{pname}
+        </if>
+
+        <if test=" grade!= null">
+            and grade = #{grade}
+        </if>
+        </where>-->
+
+    </select>
+
+
+    <!--idList-->
+    <!--select * from teachplan where id  in (1,2,3)-->
+    <select id="selectByIdList" resultType="Teachplan" parameterType="TeachVo">
+        select * from  teachplan
+        <where>
+            <if test="idList != null and idList.size()>0">
+                <foreach collection="idList" open="id in(" close=")" item="id" separator=",">
+                    #{id}
+                </foreach>
+            </if>
+        </where>
+    </select>
+
+</mapper>

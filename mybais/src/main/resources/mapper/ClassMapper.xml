@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gsk.mybatis.mapper.ClassMapper">
+  <resultMap id="BaseResultMap" type="com.gsk.mybatis.pojo.Class">
+    <!--@mbg.generated-->
+    <!--@Table `class`-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="type" jdbcType="TINYINT" property="type" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="school_id" jdbcType="BIGINT" property="schoolId" />
+    <result column="grade_id" jdbcType="BIGINT" property="gradeId" />
+    <result column="class_code" jdbcType="BIGINT" property="classCode" />
+    <result column="creator_id" jdbcType="BIGINT" property="creatorId" />
+    <result column="free" jdbcType="TINYINT" property="free" />
+    <result column="graduated" jdbcType="TINYINT" property="graduated" />
+    <result column="student_num" jdbcType="INTEGER" property="studentNum" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
+    <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `type`, `name`, school_id, grade_id, class_code, creator_id, `free`, graduated, 
+    student_num, `status`, created_at, updated_at
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from `class`
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from `class`
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.gsk.mybatis.pojo.Class">
+    <!--@mbg.generated-->
+    insert into `class` (id, `type`, `name`, 
+      school_id, grade_id, class_code, 
+      creator_id, `free`, graduated, 
+      student_num, `status`, created_at, 
+      updated_at)
+    values (#{id,jdbcType=BIGINT}, #{type,jdbcType=TINYINT}, #{name,jdbcType=VARCHAR}, 
+      #{schoolId,jdbcType=BIGINT}, #{gradeId,jdbcType=BIGINT}, #{classCode,jdbcType=BIGINT}, 
+      #{creatorId,jdbcType=BIGINT}, #{free,jdbcType=TINYINT}, #{graduated,jdbcType=TINYINT}, 
+      #{studentNum,jdbcType=INTEGER}, #{status,jdbcType=TINYINT}, #{createdAt,jdbcType=TIMESTAMP}, 
+      #{updatedAt,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gsk.mybatis.pojo.Class">
+    <!--@mbg.generated-->
+    insert into `class`
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="type != null">
+        `type`,
+      </if>
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="schoolId != null">
+        school_id,
+      </if>
+      <if test="gradeId != null">
+        grade_id,
+      </if>
+      <if test="classCode != null">
+        class_code,
+      </if>
+      <if test="creatorId != null">
+        creator_id,
+      </if>
+      <if test="free != null">
+        `free`,
+      </if>
+      <if test="graduated != null">
+        graduated,
+      </if>
+      <if test="studentNum != null">
+        student_num,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="createdAt != null">
+        created_at,
+      </if>
+      <if test="updatedAt != null">
+        updated_at,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=TINYINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="schoolId != null">
+        #{schoolId,jdbcType=BIGINT},
+      </if>
+      <if test="gradeId != null">
+        #{gradeId,jdbcType=BIGINT},
+      </if>
+      <if test="classCode != null">
+        #{classCode,jdbcType=BIGINT},
+      </if>
+      <if test="creatorId != null">
+        #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="free != null">
+        #{free,jdbcType=TINYINT},
+      </if>
+      <if test="graduated != null">
+        #{graduated,jdbcType=TINYINT},
+      </if>
+      <if test="studentNum != null">
+        #{studentNum,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createdAt != null">
+        #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedAt != null">
+        #{updatedAt,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gsk.mybatis.pojo.Class">
+    <!--@mbg.generated-->
+    update `class`
+    <set>
+      <if test="type != null">
+        `type` = #{type,jdbcType=TINYINT},
+      </if>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="schoolId != null">
+        school_id = #{schoolId,jdbcType=BIGINT},
+      </if>
+      <if test="gradeId != null">
+        grade_id = #{gradeId,jdbcType=BIGINT},
+      </if>
+      <if test="classCode != null">
+        class_code = #{classCode,jdbcType=BIGINT},
+      </if>
+      <if test="creatorId != null">
+        creator_id = #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="free != null">
+        `free` = #{free,jdbcType=TINYINT},
+      </if>
+      <if test="graduated != null">
+        graduated = #{graduated,jdbcType=TINYINT},
+      </if>
+      <if test="studentNum != null">
+        student_num = #{studentNum,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        `status` = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createdAt != null">
+        created_at = #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedAt != null">
+        updated_at = #{updatedAt,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gsk.mybatis.pojo.Class">
+    <!--@mbg.generated-->
+    update `class`
+    set `type` = #{type,jdbcType=TINYINT},
+      `name` = #{name,jdbcType=VARCHAR},
+      school_id = #{schoolId,jdbcType=BIGINT},
+      grade_id = #{gradeId,jdbcType=BIGINT},
+      class_code = #{classCode,jdbcType=BIGINT},
+      creator_id = #{creatorId,jdbcType=BIGINT},
+      `free` = #{free,jdbcType=TINYINT},
+      graduated = #{graduated,jdbcType=TINYINT},
+      student_num = #{studentNum,jdbcType=INTEGER},
+      `status` = #{status,jdbcType=TINYINT},
+      created_at = #{createdAt,jdbcType=TIMESTAMP},
+      updated_at = #{updatedAt,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

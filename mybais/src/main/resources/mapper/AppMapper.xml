@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gsk.mybatis.mapper.AppMapper">
+  <resultMap id="BaseResultMap" type="com.gsk.mybatis.pojo.App">
+    <!--@mbg.generated-->
+    <!--@Table app-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="version_code" jdbcType="INTEGER" property="versionCode" />
+    <result column="version_string" jdbcType="VARCHAR" property="versionString" />
+    <result column="message" jdbcType="VARCHAR" property="message" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="size" jdbcType="BIGINT" property="size" />
+    <result column="app_type" jdbcType="TINYINT" property="appType" />
+    <result column="forced_upgrade_status" jdbcType="TINYINT" property="forcedUpgradeStatus" />
+    <result column="minimum_version_code" jdbcType="INTEGER" property="minimumVersionCode" />
+    <result column="minimum_version_string" jdbcType="VARCHAR" property="minimumVersionString" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
+    <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, version_code, version_string, message, url, `size`, app_type, forced_upgrade_status, 
+    minimum_version_code, minimum_version_string, `status`, created_at, updated_at
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from app
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from app
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.gsk.mybatis.pojo.App">
+    <!--@mbg.generated-->
+    insert into app (id, version_code, version_string, 
+      message, url, `size`, 
+      app_type, forced_upgrade_status, minimum_version_code, 
+      minimum_version_string, `status`, created_at, 
+      updated_at)
+    values (#{id,jdbcType=BIGINT}, #{versionCode,jdbcType=INTEGER}, #{versionString,jdbcType=VARCHAR}, 
+      #{message,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{size,jdbcType=BIGINT}, 
+      #{appType,jdbcType=TINYINT}, #{forcedUpgradeStatus,jdbcType=TINYINT}, #{minimumVersionCode,jdbcType=INTEGER}, 
+      #{minimumVersionString,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, #{createdAt,jdbcType=TIMESTAMP}, 
+      #{updatedAt,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gsk.mybatis.pojo.App">
+    <!--@mbg.generated-->
+    insert into app
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="versionCode != null">
+        version_code,
+      </if>
+      <if test="versionString != null">
+        version_string,
+      </if>
+      <if test="message != null">
+        message,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="size != null">
+        `size`,
+      </if>
+      <if test="appType != null">
+        app_type,
+      </if>
+      <if test="forcedUpgradeStatus != null">
+        forced_upgrade_status,
+      </if>
+      <if test="minimumVersionCode != null">
+        minimum_version_code,
+      </if>
+      <if test="minimumVersionString != null">
+        minimum_version_string,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="createdAt != null">
+        created_at,
+      </if>
+      <if test="updatedAt != null">
+        updated_at,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="versionCode != null">
+        #{versionCode,jdbcType=INTEGER},
+      </if>
+      <if test="versionString != null">
+        #{versionString,jdbcType=VARCHAR},
+      </if>
+      <if test="message != null">
+        #{message,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="size != null">
+        #{size,jdbcType=BIGINT},
+      </if>
+      <if test="appType != null">
+        #{appType,jdbcType=TINYINT},
+      </if>
+      <if test="forcedUpgradeStatus != null">
+        #{forcedUpgradeStatus,jdbcType=TINYINT},
+      </if>
+      <if test="minimumVersionCode != null">
+        #{minimumVersionCode,jdbcType=INTEGER},
+      </if>
+      <if test="minimumVersionString != null">
+        #{minimumVersionString,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createdAt != null">
+        #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedAt != null">
+        #{updatedAt,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gsk.mybatis.pojo.App">
+    <!--@mbg.generated-->
+    update app
+    <set>
+      <if test="versionCode != null">
+        version_code = #{versionCode,jdbcType=INTEGER},
+      </if>
+      <if test="versionString != null">
+        version_string = #{versionString,jdbcType=VARCHAR},
+      </if>
+      <if test="message != null">
+        message = #{message,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="size != null">
+        `size` = #{size,jdbcType=BIGINT},
+      </if>
+      <if test="appType != null">
+        app_type = #{appType,jdbcType=TINYINT},
+      </if>
+      <if test="forcedUpgradeStatus != null">
+        forced_upgrade_status = #{forcedUpgradeStatus,jdbcType=TINYINT},
+      </if>
+      <if test="minimumVersionCode != null">
+        minimum_version_code = #{minimumVersionCode,jdbcType=INTEGER},
+      </if>
+      <if test="minimumVersionString != null">
+        minimum_version_string = #{minimumVersionString,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        `status` = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createdAt != null">
+        created_at = #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedAt != null">
+        updated_at = #{updatedAt,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gsk.mybatis.pojo.App">
+    <!--@mbg.generated-->
+    update app
+    set version_code = #{versionCode,jdbcType=INTEGER},
+      version_string = #{versionString,jdbcType=VARCHAR},
+      message = #{message,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      `size` = #{size,jdbcType=BIGINT},
+      app_type = #{appType,jdbcType=TINYINT},
+      forced_upgrade_status = #{forcedUpgradeStatus,jdbcType=TINYINT},
+      minimum_version_code = #{minimumVersionCode,jdbcType=INTEGER},
+      minimum_version_string = #{minimumVersionString,jdbcType=VARCHAR},
+      `status` = #{status,jdbcType=TINYINT},
+      created_at = #{createdAt,jdbcType=TIMESTAMP},
+      updated_at = #{updatedAt,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+<!--auto generated by MybatisCodeHelper on 2020-05-15-->
+  <select id="selectByAppType" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from app
+        where app_type=#{appType,jdbcType=TINYINT}
+    </select>
+</mapper>

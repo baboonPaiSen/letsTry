@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gsk.mybatis.mapper.AccountMapper">
+
+
+
+    <!--多对一  就是一对一  示范-->
+    <resultMap id="AccountUser" type="Account">
+        <id column="user_id" property="id"/>
+        <result column="user_id" property="uid"/>
+        <result column="user_id" property="money"/>
+        <association property="user" javaType="com.gsk.mybatis.pojo.User">
+            <id column="user_id" property="id"/>
+            <result column="user_id" property="username"/>
+            <result column="user_birthday" property="birthday"/>
+            <result column="user_id" property="sex"/>
+            <result column="user_address" property="address"/>
+        </association>
+    </resultMap>
+
+    <select id="findAll" resultMap="AccountUser">
+        <!--注意 当2个POJO字段重复时，不使用别名会导致结果查询缺少 ，例如aid-->
+        select user.id as user_id,user.username as user_username,user.birthday as user_birthday,user.sex as
+        user_sex,user.address as user_address
+        ,account.ID as account_ID,account.UID as account_UID,account.MONEY as account_MONEY from user inner JOIN account
+        on user.id = account.uid
+    </select>
+
+
+    <select id="findAccountByUid" parameterType="Integer" resultType="Account">
+        select  * from  account  where  UID = #{uid}
+    </select>
+</mapper>

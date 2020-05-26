@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gsk.mybatis.mapper.WorkStudentMapper">
+  <resultMap id="BaseResultMap" type="com.gsk.mybatis.pojo.WorkStudent">
+    <!--@mbg.generated-->
+    <!--@Table work_student-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="work_id" jdbcType="BIGINT" property="workId" />
+    <result column="student_id" jdbcType="BIGINT" property="studentId" />
+    <result column="commit_time" jdbcType="TIMESTAMP" property="commitTime" />
+    <result column="corrected" jdbcType="TINYINT" property="corrected" />
+    <result column="match_status" jdbcType="TINYINT" property="matchStatus" />
+    <result column="match_request_count" jdbcType="TINYINT" property="matchRequestCount" />
+    <result column="coaching_update_status" jdbcType="TINYINT" property="coachingUpdateStatus" />
+    <result column="read_status" jdbcType="BOOLEAN" property="readStatus" />
+    <result column="assistant_correct_status" jdbcType="TINYINT" property="assistantCorrectStatus" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="is_rejected" jdbcType="TINYINT" property="isRejected" />
+    <result column="rejected_reason" jdbcType="VARCHAR" property="rejectedReason" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
+    <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, work_id, student_id, commit_time, corrected, match_status, match_request_count, 
+    coaching_update_status, read_status, assistant_correct_status, `status`, is_rejected, 
+    rejected_reason, created_at, updated_at
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from work_student
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from work_student
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.gsk.mybatis.pojo.WorkStudent">
+    <!--@mbg.generated-->
+    insert into work_student (id, work_id, student_id, 
+      commit_time, corrected, match_status, 
+      match_request_count, coaching_update_status, 
+      read_status, assistant_correct_status, `status`, 
+      is_rejected, rejected_reason, created_at, 
+      updated_at)
+    values (#{id,jdbcType=BIGINT}, #{workId,jdbcType=BIGINT}, #{studentId,jdbcType=BIGINT}, 
+      #{commitTime,jdbcType=TIMESTAMP}, #{corrected,jdbcType=TINYINT}, #{matchStatus,jdbcType=TINYINT}, 
+      #{matchRequestCount,jdbcType=TINYINT}, #{coachingUpdateStatus,jdbcType=TINYINT}, 
+      #{readStatus,jdbcType=BOOLEAN}, #{assistantCorrectStatus,jdbcType=TINYINT}, #{status,jdbcType=TINYINT}, 
+      #{isRejected,jdbcType=TINYINT}, #{rejectedReason,jdbcType=VARCHAR}, #{createdAt,jdbcType=TIMESTAMP}, 
+      #{updatedAt,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gsk.mybatis.pojo.WorkStudent">
+    <!--@mbg.generated-->
+    insert into work_student
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="workId != null">
+        work_id,
+      </if>
+      <if test="studentId != null">
+        student_id,
+      </if>
+      <if test="commitTime != null">
+        commit_time,
+      </if>
+      <if test="corrected != null">
+        corrected,
+      </if>
+      <if test="matchStatus != null">
+        match_status,
+      </if>
+      <if test="matchRequestCount != null">
+        match_request_count,
+      </if>
+      <if test="coachingUpdateStatus != null">
+        coaching_update_status,
+      </if>
+      <if test="readStatus != null">
+        read_status,
+      </if>
+      <if test="assistantCorrectStatus != null">
+        assistant_correct_status,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="isRejected != null">
+        is_rejected,
+      </if>
+      <if test="rejectedReason != null">
+        rejected_reason,
+      </if>
+      <if test="createdAt != null">
+        created_at,
+      </if>
+      <if test="updatedAt != null">
+        updated_at,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="workId != null">
+        #{workId,jdbcType=BIGINT},
+      </if>
+      <if test="studentId != null">
+        #{studentId,jdbcType=BIGINT},
+      </if>
+      <if test="commitTime != null">
+        #{commitTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="corrected != null">
+        #{corrected,jdbcType=TINYINT},
+      </if>
+      <if test="matchStatus != null">
+        #{matchStatus,jdbcType=TINYINT},
+      </if>
+      <if test="matchRequestCount != null">
+        #{matchRequestCount,jdbcType=TINYINT},
+      </if>
+      <if test="coachingUpdateStatus != null">
+        #{coachingUpdateStatus,jdbcType=TINYINT},
+      </if>
+      <if test="readStatus != null">
+        #{readStatus,jdbcType=BOOLEAN},
+      </if>
+      <if test="assistantCorrectStatus != null">
+        #{assistantCorrectStatus,jdbcType=TINYINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="isRejected != null">
+        #{isRejected,jdbcType=TINYINT},
+      </if>
+      <if test="rejectedReason != null">
+        #{rejectedReason,jdbcType=VARCHAR},
+      </if>
+      <if test="createdAt != null">
+        #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedAt != null">
+        #{updatedAt,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gsk.mybatis.pojo.WorkStudent">
+    <!--@mbg.generated-->
+    update work_student
+    <set>
+      <if test="workId != null">
+        work_id = #{workId,jdbcType=BIGINT},
+      </if>
+      <if test="studentId != null">
+        student_id = #{studentId,jdbcType=BIGINT},
+      </if>
+      <if test="commitTime != null">
+        commit_time = #{commitTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="corrected != null">
+        corrected = #{corrected,jdbcType=TINYINT},
+      </if>
+      <if test="matchStatus != null">
+        match_status = #{matchStatus,jdbcType=TINYINT},
+      </if>
+      <if test="matchRequestCount != null">
+        match_request_count = #{matchRequestCount,jdbcType=TINYINT},
+      </if>
+      <if test="coachingUpdateStatus != null">
+        coaching_update_status = #{coachingUpdateStatus,jdbcType=TINYINT},
+      </if>
+      <if test="readStatus != null">
+        read_status = #{readStatus,jdbcType=BOOLEAN},
+      </if>
+      <if test="assistantCorrectStatus != null">
+        assistant_correct_status = #{assistantCorrectStatus,jdbcType=TINYINT},
+      </if>
+      <if test="status != null">
+        `status` = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="isRejected != null">
+        is_rejected = #{isRejected,jdbcType=TINYINT},
+      </if>
+      <if test="rejectedReason != null">
+        rejected_reason = #{rejectedReason,jdbcType=VARCHAR},
+      </if>
+      <if test="createdAt != null">
+        created_at = #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedAt != null">
+        updated_at = #{updatedAt,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gsk.mybatis.pojo.WorkStudent">
+    <!--@mbg.generated-->
+    update work_student
+    set work_id = #{workId,jdbcType=BIGINT},
+      student_id = #{studentId,jdbcType=BIGINT},
+      commit_time = #{commitTime,jdbcType=TIMESTAMP},
+      corrected = #{corrected,jdbcType=TINYINT},
+      match_status = #{matchStatus,jdbcType=TINYINT},
+      match_request_count = #{matchRequestCount,jdbcType=TINYINT},
+      coaching_update_status = #{coachingUpdateStatus,jdbcType=TINYINT},
+      read_status = #{readStatus,jdbcType=BOOLEAN},
+      assistant_correct_status = #{assistantCorrectStatus,jdbcType=TINYINT},
+      `status` = #{status,jdbcType=TINYINT},
+      is_rejected = #{isRejected,jdbcType=TINYINT},
+      rejected_reason = #{rejectedReason,jdbcType=VARCHAR},
+      created_at = #{createdAt,jdbcType=TIMESTAMP},
+      updated_at = #{updatedAt,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+
+  <resultMap id="workStudentJoinWord" type="com.gsk.mybatis.Vo.WorkJoinWorkStudent">
+
+    <id column="id" property="id"/>
+    <result column="class_id" property="classId"/>
+    <result column="school_id" property="schoolId"/>
+    <result column="name" property="name"/>
+    <result column="release_time" property="releaseTime"/>
+    <result column="end_time" property="endTime"/>
+    <result column="grade_id" property="gradeId"/>
+    <result column="subject_id" property="subjectId"/>
+    <result column="item" property="item"/>
+    <result column="content" property="content"/>
+    <result column="work_status" property="workStatus"/>
+    <result column="return_time" property="returnTime"/>
+    <result column="together_id" property="togetherId"/>
+    <result column="creator_id" property="creatorId"/>
+    <result column="service_id" property="serviceId"/>
+    <result column="status" property="status"/>
+    <result column="scan_job_id" property="scanJobId"/>
+    <result column="scan_status" property="scanStatus"/>
+    <result column="review_status" property="reviewStatus"/>
+    <result column="is_sadl_allowed" property="isSadlAllowed"/>
+    <result column="assistant_id" property="assistantId"/>
+    <result column="created_at" property="createdAt"/>
+    <result column="updated_at" property="updatedAt"/>
+    <association property="workStudent" javaType="com.gsk.mybatis.pojo.WorkStudent" columnPrefix="work_student_">      <id column="id" property="id"/>
+      <result column="work_id" property="workId"/>
+      <result column="student_id" property="studentId"/>
+      <result column="commit_time" property="commitTime"/>
+      <result column="corrected" property="corrected"/>
+      <result column="match_status" property="matchStatus"/>
+      <result column="match_request_count" property="matchRequestCount"/>
+      <result column="coaching_update_status" property="coachingUpdateStatus"/>
+      <result column="read_status" property="readStatus"/>
+      <result column="assistant_correct_status" property="assistantCorrectStatus"/>
+      <result column="status" property="status"/>
+      <result column="is_rejected" property="isRejected"/>
+      <result column="rejected_reason" property="rejectedReason"/>
+      <result column="created_at" property="createdAt"/>
+      <result column="updated_at" property="updatedAt"/>
+    </association>
+  </resultMap>
+  <select id="selectunsubmittedList"
+          resultMap="workStudentJoinWord">
+    SELECT work.id,work.class_id,work.school_id,work.name,work.release_time,work.end_time,work.grade_id,work.subject_id,
+           work.item,work.content,work.work_status,work.return_time,work.together_id,work.creator_id,work.service_id,work.status,
+           work.scan_job_id,work.scan_status,work.review_status,work.is_sadl_allowed,work.assistant_id,work.created_at,
+           work.updated_at ,work_student.id as work_student_id,work_student.work_id as work_student_work_id,work_student.student_id as work_student_student_id,
+           work_student.commit_time as work_student_commit_time,work_student.corrected as work_student_corrected,work_student.match_status as work_student_match_status,
+           work_student.match_request_count as work_student_match_request_count,work_student.coaching_update_status as work_student_coaching_update_status,
+           work_student.read_status as work_student_read_status,work_student.assistant_correct_status as work_student_assistant_correct_status,
+           work_student.status as work_student_status,work_student.is_rejected as work_student_is_rejected,work_student.rejected_reason as work_student_rejected_reason,
+           work_student.created_at as work_student_created_at,work_student.updated_at as work_student_updated_at FROM work_student LEFT JOIN work ON work_student.student_id = 1006371 LIMIT 1,10
+  </select>
+
+</mapper>
