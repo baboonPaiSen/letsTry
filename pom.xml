@@ -12,6 +12,7 @@
         <module>mybais</module>
         <module>stream</module>
         <module>generic</module>
+        <module>fast-excel</module>
     </modules>
 
 
@@ -37,7 +38,6 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>
