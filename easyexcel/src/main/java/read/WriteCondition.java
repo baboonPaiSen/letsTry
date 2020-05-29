@@ -5,18 +5,17 @@ import java.util.Date;
 import java.util.List;
 
 import com.alibaba.excel.EasyExcel;
-import com.alibaba.excel.ExcelWriter;
-import com.alibaba.excel.write.metadata.WriteSheet;
 import org.junit.Test;
 import pojo.DemoData;
 
 /**
- * @description: TODO 注意使用EASYExcel要注释掉poi
- * @date: 2020/5/26 18:22
+ * @description: TODO
+ * @date: 2020/5/29 18:28
  * @author: ShangKun
  * @version: 2.0.0
  */
-public class EasyExcelRead {
+public class WriteCondition {
+
 
     private static  String PATH = "G:\\excel\\";
 
@@ -32,11 +31,6 @@ public class EasyExcelRead {
         return list;
     }
 
-    /**
-     * 最简单的写
-     * <p>1. 创建excel对应的实体对象 参照{@link DemoData}
-     * <p>2. 直接写即可
-     */
     @Test
     public void simpleWrite() {
         // 写法1
@@ -44,15 +38,9 @@ public class EasyExcelRead {
         // 这里 需要指定写用哪个class去写，然后写到第一个sheet，名字为模板 然后文件流会自动关闭
         // 如果这里想使用03 则 传入excelType参数即可
         List<DemoData> data = this.data();
-        EasyExcel.write(fileName, DemoData.class).sheet("模板").doWrite(data);
-
-        // 写法2
-        String fileName1 = PATH + "simpleWrite" + System.currentTimeMillis() + ".xlsx";
-        // 这里 需要指定写用哪个class去写
-        ExcelWriter excelWriter = EasyExcel.write(fileName1, DemoData.class).build();
-        WriteSheet writeSheet = EasyExcel.writerSheet("模板").build();
-        excelWriter.write(data(), writeSheet);
-        // 千万别忘记finish 会帮忙关闭流
-        excelWriter.finish();
+        /*includeColumnFiledNames里面设置要显示的字段*/
+        EasyExcel.write(fileName, DemoData.class).includeColumnFiledNames(null).sheet("模板").doWrite(data);
+        /*excludeColumnFiledNames里面设置排除掉的字段*/
+        EasyExcel.write(fileName, DemoData.class).excludeColumnFiledNames(null).sheet("模板").doWrite(data);
     }
 }

@@ -9,11 +9,12 @@ import lombok.Data;
 @Data
 public class DemoData {
 
-    @ExcelProperty("字符串标题")
+    //index影响在excel中的排序结果
+    @ExcelProperty(value = "字符串标题",index = 0)
     private String string;
-    @ExcelProperty("日期标题")
+    @ExcelProperty(value = "日期标题",index = 1)
     private Date date;
-    @ExcelProperty("数字标题")
+    @ExcelProperty(value = "数字标题",index = 2)
     private Double doubleData;
     /**
      * 忽略这个字段

@@ -11,7 +11,7 @@
         <module name="generic" />
         <module name="mybais" />
         <module name="regexp" />
-        <module name="fast-excel" />
+        <module name="easyexcel" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />
