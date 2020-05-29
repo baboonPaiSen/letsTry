@@ -13,6 +13,7 @@
         <module>stream</module>
         <module>generic</module>
         <module>fast-excel</module>
+        <module>regexp</module>
     </modules>
 
 

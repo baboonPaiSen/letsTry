@@ -10,6 +10,7 @@
         <module name="stream" />
         <module name="generic" />
         <module name="mybais" />
+        <module name="regexp" />
         <module name="fast-excel" />
       </profile>
     </annotationProcessing>
