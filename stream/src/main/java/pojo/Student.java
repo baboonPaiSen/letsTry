@@ -1,5 +1,9 @@
 package pojo;
 
+import lombok.Setter;
+import lombok.ToString;
+
+@ToString
 public class Student implements Comparable<Student> {
 	private int id;
 	private String name;
@@ -46,5 +50,19 @@ public class Student implements Comparable<Student> {
 		int hashno = 7;
 		hashno = 13 * hashno + (name == null ? 0 : name.hashCode());
 		return hashno;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
+	public void setAge(Integer integer) {
+		this.age = age;
 	}
 }
