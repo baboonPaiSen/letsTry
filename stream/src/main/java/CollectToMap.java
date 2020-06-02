@@ -95,7 +95,20 @@ public class CollectToMap {
         Map<Integer, Student> collect11 = students.stream().collect(groupingBy(Student::getId, collectingAndThen(maxBy(Comparator.comparing(Student::getAge)), Optional::get)));
 
 
+        /*正确尝试1*/
+        Map<Integer, List<Student>> collect12 = students.stream().collect(groupingBy(Student::getId, collectingAndThen(toList(), (list) ->
 
+                    list.stream().filter(x -> x.getAge() < 5).collect(toList())
+
+        )));
+
+        Map<Integer, List<Student>> collect13 = students.stream().
+
+                collect(groupingBy(Student::getId, collectingAndThen(toList(), (list) ->
+
+                list.stream().peek(x -> x.setName("对不对就看你了")).collect(toList())
+
+        )));
 
         List<String> s1 = Arrays.asList("a", "bb", "cc", "ddd");
 
