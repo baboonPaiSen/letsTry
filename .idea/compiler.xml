@@ -8,13 +8,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="stream" />
-        <module name="generic" />
         <module name="mybais" />
+        <module name="generic" />
         <module name="regexp" />
+        <module name="itextpdf" />
+        <module name="stream" />
         <module name="easyexcel" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8" />
+    <bytecodeTargetLevel target="8">
+      <module name="fast-excel" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

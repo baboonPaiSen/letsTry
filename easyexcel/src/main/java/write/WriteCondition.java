@@ -1,5 +1,9 @@
-package read;
+package write;
 
+import java.awt.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -9,6 +13,8 @@ import com.alibaba.excel.ExcelWriter;
 import com.alibaba.excel.write.metadata.WriteSheet;
 import org.junit.Test;
 import pojo.DemoData;
+import pojo.ImageData;
+import pojo.WidthAndHeightData;
 
 /**
  * @description: TODO
@@ -100,6 +106,48 @@ public class WriteCondition {
         excelWriter.finish();
 
     }
+
+    @Test
+    public void writeImage() throws  Exception{
+        String fileName1 = PATH + "WriteImage" + System.currentTimeMillis() + ".xlsx";
+
+        ImageData imageData = new ImageData();
+        imageData.setFile(new File("G:\\Test\\letsTry\\easyexcel\\src\\main\\resources\\test.jpeg"));
+        imageData.setInputStream(new FileInputStream(new File("G:\\Test\\letsTry\\easyexcel\\src\\main\\resources\\test.jpeg")));
+        imageData.setString("G:\\Test\\letsTry\\easyexcel\\src\\main\\resources\\test.jpeg");
+        imageData.setUrl(new URL("https://pics4.baidu.com/feed/b3fb43166d224f4abcd8bedaed8951549922d138.jpeg?token=52eaf1b21ce50a5fc102d95eccf25c2c&s=B90BA056487498DE001A8C870300F08B"));
+
+        byte[] bytes = new byte[(int)new File("G:\\Test\\letsTry\\easyexcel\\src\\main\\resources\\test.jpeg").length()];
+        FileInputStream fileInputStream = new FileInputStream("G:\\Test\\letsTry\\easyexcel\\src\\main\\resources\\test.jpeg");
+
+        fileInputStream.read(bytes,0,(int)new File("G:\\Test\\letsTry\\easyexcel\\src\\main\\resources\\test.jpeg").length());
+        imageData.setByteArray(bytes);
+        List<ImageData> list = new ArrayList<>();
+
+        list.add(imageData);
+        EasyExcel.write(fileName1,ImageData.class).sheet("image").doWrite(list);
+    }
+
+    @Test
+    public void writeWithWidth() throws  Exception{
+        String fileName1 = PATH + "WriteImage" + System.currentTimeMillis() + ".xlsx";
+
+        List<WidthAndHeightData> list = new ArrayList<>();
+
+        WidthAndHeightData widthAndHeightData = new WidthAndHeightData();
+        widthAndHeightData.setString("");
+        widthAndHeightData.setDate(new Date());
+        widthAndHeightData.setDoubleDate(0.0D);
+        WidthAndHeightData widthAndHeightData1 = new WidthAndHeightData();
+        widthAndHeightData1.setString("222222");
+        widthAndHeightData1.setDate(new Date());
+        widthAndHeightData1.setDoubleDate(2.222D);
+        list.add(widthAndHeightData);
+        list.add(widthAndHeightData1);
+
+
+
+        EasyExcel.write(fileName1, WidthAndHeightData.class).sheet("width").doWrite(list);}
 
 
 

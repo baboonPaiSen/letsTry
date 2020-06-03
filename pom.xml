@@ -12,8 +12,9 @@
         <module>mybais</module>
         <module>stream</module>
         <module>generic</module>
-        <module>fast-excel</module>
+        <module>easyexcel</module>
         <module>regexp</module>
+        <module>itextpdf</module>
     </modules>
 
 

@@ -102,6 +102,7 @@ public class CollectToMap {
 
         )));
 
+        /*正确尝试2*/
         Map<Integer, List<Student>> collect13 = students.stream().
 
                 collect(groupingBy(Student::getId, collectingAndThen(toList(), (list) ->
@@ -117,10 +118,8 @@ public class CollectToMap {
 
         System.out.println(r1); // {1=[a], 2=[bb,cc], 3=[ddd]}
 
-
-
-
-
+        /*简写方式*/
+        List<Integer> collect14 = students.stream().map(Student::getAge).collect(toList());
 
 
 

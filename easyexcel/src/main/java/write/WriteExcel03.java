@@ -1,4 +1,5 @@
-package read;
+package write;
+
 
 import java.io.FileOutputStream;
 
@@ -7,7 +8,6 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.joda.time.DateTime;
 
 /**
@@ -16,7 +16,7 @@ import org.joda.time.DateTime;
  * @author: ShangKun
  * @version: 2.0.0
  */
-public class WriteExcel07 {
+public class WriteExcel03 {
 
     private static  String PATH = "G:\\excel\\";
 
@@ -24,7 +24,7 @@ public class WriteExcel07 {
 
 
         /*创建一个工作部*/
-        Workbook workbook = new XSSFWorkbook();
+        Workbook workbook = new HSSFWorkbook();
         /*创建一个工作表*/
         Sheet sheet = workbook.createSheet("第一个工作表");
 
@@ -54,7 +54,7 @@ public class WriteExcel07 {
         cell22.setCellValue(date);
 
         try {
-            FileOutputStream f = new FileOutputStream(PATH+"07版本要以xlsx结尾.xlsx");
+            FileOutputStream f = new FileOutputStream(PATH+"03版本要以xls结尾.xls");
             workbook.write(f);
             f.close();
         } catch (Exception e) {
