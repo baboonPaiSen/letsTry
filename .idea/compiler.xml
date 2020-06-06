@@ -8,9 +8,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="rabbitMq" />
         <module name="mybais" />
         <module name="generic" />
         <module name="regexp" />
+        <module name="java" />
         <module name="itextpdf" />
         <module name="stream" />
         <module name="easyexcel" />
@@ -19,5 +21,17 @@
     <bytecodeTargetLevel target="8">
       <module name="fast-excel" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="easyexcel" options="-parameters" />
+      <module name="generic" options="-parameters" />
+      <module name="itextpdf" options="-parameters" />
+      <module name="java" options="-parameters" />
+      <module name="mybais" options="-parameters" />
+      <module name="rabbitMq" options="-parameters" />
+      <module name="regexp" options="-parameters" />
+      <module name="stream" options="-parameters" />
+    </option>
   </component>
 </project>
