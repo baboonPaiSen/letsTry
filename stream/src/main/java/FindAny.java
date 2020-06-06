@@ -34,5 +34,7 @@ public class FindAny {
         Optional<Student> any = data.stream().filter(x -> x.getAge() == 11).findAny();
         any.ifPresent(System.out::println);
 
+        Student student1 = data.stream().filter(x -> x.getAge() == 11).findFirst().orElseGet(() -> data.stream().filter(x -> x.getAge() == 4).findAny().orElse(null));
+
     }
 }
