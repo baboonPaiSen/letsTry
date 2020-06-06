@@ -24,6 +24,7 @@
         <module>itextpdf</module>
         <module>java</module>
         <module>rabbitMq</module>
+        <module>redis</module>
     </modules>
 
 

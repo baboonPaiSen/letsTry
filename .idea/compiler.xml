@@ -13,6 +13,7 @@
         <module name="generic" />
         <module name="regexp" />
         <module name="java" />
+        <module name="redis" />
         <module name="itextpdf" />
         <module name="stream" />
         <module name="easyexcel" />
@@ -30,6 +31,7 @@
       <module name="java" options="-parameters" />
       <module name="mybais" options="-parameters" />
       <module name="rabbitMq" options="-parameters" />
+      <module name="redis" options="-parameters" />
       <module name="regexp" options="-parameters" />
       <module name="stream" options="-parameters" />
     </option>
