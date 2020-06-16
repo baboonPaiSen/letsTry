@@ -1,0 +1,19 @@
+server:
+  port: ${PORT:50103}
+spring:
+  application:
+    name: eureka—consumer
+eureka:
+  client:
+    service-url:  # EurekaServer的地址，现在是自己的地址，如果是集群，需要加上其它Server的地址
+      defaultZone: http://127.0.0.1:50101/eureka,http://127.0.0.1:50102/eureka,
+    register-with-eureka: true # 如果是true把自己注册到eureka服务列表（拉集群会互相查询状态，所以先把自己注册进来，避免找不到集群）
+    fetch-registry: true # 拉取eureka服务信息
+    registry-fetch-interval-seconds: 5 #开发环境使用：加速拉取服务列表
+  instance:
+    instance-id: ${spring.application.name}:${server.port} #服务名：端口号显示
+    prefer-ip-address: true #消费服务直接把IP注册到EUREKA
+    ip-address: ${IP_ADDRESS:127.0.0.1}
+    lease-expiration-duration-in-seconds: 10  #开发环境使用： 10秒即过期  默认90
+    lease-renewal-interval-in-seconds: 5  #开发环境使用： 5秒一次心跳   默认30
+

@@ -1,0 +1,17 @@
+server:
+  port: ${PORT:50101}
+spring:
+  application:
+    name: eureka-provide
+eureka:
+  client:
+    service-url:  # EurekaServer的地址，现在是自己的地址，如果是集群，需要加上其它Server的地址
+      defaultZone: ${EUREKA_SERVER:http://127.0.0.1:50102/eureka}
+    register-with-eureka: true # 如果是true把自己注册到eureka服务列表（拉集群会互相查询状态，所以先把自己注册进来，避免找不到集群）
+    fetch-registry: true # 拉取eureka服务信息
+  server:
+    enable-self-preservation: false # 关闭自我保护（开了之后延迟高的电脑不剔除）
+    eviction-interval-timer-in-ms: 5000 # 每隔5秒钟，进行一次服务列表的清理
+  instance:
+    instance-id: ${spring.application.name}:${server.port} #服务名：端口号显示
+    hostname: ${EYREKA_DOMAIN:eureka01} #主机名
