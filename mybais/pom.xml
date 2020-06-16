@@ -11,5 +11,10 @@
 
     <artifactId>mybais</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+        </dependency>
+    </dependencies>
 </project>
