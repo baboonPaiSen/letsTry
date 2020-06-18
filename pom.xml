@@ -27,6 +27,7 @@
         <module>redis</module>
         <module>eureka</module>
         <module>elasticsearch</module>
+        <module>jidong</module>
     </modules>
 
 

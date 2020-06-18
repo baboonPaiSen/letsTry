@@ -18,6 +18,7 @@
         <module name="elasticsearch" />
         <module name="itextpdf" />
         <module name="stream" />
+        <module name="jidong" />
         <module name="java" />
         <module name="rabbitMq" />
       </profile>
@@ -36,6 +37,7 @@
       <module name="generic" options="-parameters" />
       <module name="itextpdf" options="-parameters" />
       <module name="java" options="-parameters" />
+      <module name="jidong" options="-parameters" />
       <module name="mybais" options="-parameters" />
       <module name="rabbitMq" options="-parameters" />
       <module name="redis" options="-parameters" />
