@@ -8,19 +8,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="springsecuity" />
+        <module name="eureka01" />
+        <module name="stream" />
         <module name="redis" />
-        <module name="mybais" />
-        <module name="generic" />
+        <module name="itextpdf" />
+        <module name="rabbitMq" />
         <module name="eureka02" />
+        <module name="mybais" />
+        <module name="jidong" />
+        <module name="generic" />
+        <module name="elasticsearch" />
         <module name="easyexcel" />
         <module name="regexp" />
-        <module name="eureka01" />
-        <module name="elasticsearch" />
-        <module name="stream" />
-        <module name="itextpdf" />
-        <module name="jidong" />
         <module name="java" />
-        <module name="rabbitMq" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
@@ -42,6 +43,7 @@
       <module name="rabbitMq" options="-parameters" />
       <module name="redis" options="-parameters" />
       <module name="regexp" options="-parameters" />
+      <module name="springsecuity" options="-parameters" />
       <module name="stream" options="-parameters" />
     </option>
   </component>
