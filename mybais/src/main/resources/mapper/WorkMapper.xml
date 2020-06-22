@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gsk.mybatis.mapper.WorkMapper">
-  <resultMap id="BaseResultMap" type="com.gsk.mybatis.pojo.Work">
+  <resultMap id="BaseResultMap" type="com.gsk.mybatis.com.gsk.pojo.pojo.Work">
     <!--@mbg.generated-->
     <!--@Table `work`-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -47,7 +47,7 @@
     delete from `work`
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.gsk.mybatis.pojo.Work">
+  <insert id="insert" parameterType="com.gsk.mybatis.com.gsk.pojo.pojo.Work">
     <!--@mbg.generated-->
     insert into `work` (id, class_id, school_id, 
       `name`, release_time, end_time, 
@@ -66,7 +66,7 @@
       #{reviewStatus,jdbcType=TINYINT}, #{isSadlAllowed,jdbcType=TINYINT}, #{assistantId,jdbcType=BIGINT}, 
       #{createdAt,jdbcType=TIMESTAMP}, #{updatedAt,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.gsk.mybatis.pojo.Work">
+  <insert id="insertSelective" parameterType="com.gsk.mybatis.com.gsk.pojo.pojo.Work">
     <!--@mbg.generated-->
     insert into `work`
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -212,7 +212,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.gsk.mybatis.pojo.Work">
+  <update id="updateByPrimaryKeySelective" parameterType="com.gsk.mybatis.com.gsk.pojo.pojo.Work">
     <!--@mbg.generated-->
     update `work`
     <set>
@@ -285,7 +285,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.gsk.mybatis.pojo.Work">
+  <update id="updateByPrimaryKey" parameterType="com.gsk.mybatis.com.gsk.pojo.pojo.Work">
     <!--@mbg.generated-->
     update `work`
     set class_id = #{classId,jdbcType=BIGINT},

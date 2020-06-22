@@ -2,7 +2,7 @@ package dao;
 
 import java.util.List;
 
-import pojo.DemoData;
+import com.gsk.pojo.pojo.DemoData;
 
 /**
  * 假设这个是你的DAO存储。当然还要这个类让spring管理，当然你不用需要存储，也不需要这个类。

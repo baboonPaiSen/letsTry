@@ -8,7 +8,7 @@ import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.ExcelWriter;
 import com.alibaba.excel.write.metadata.WriteSheet;
 import org.junit.Test;
-import pojo.DemoData;
+import com.gsk.pojo.pojo.DemoData;
 
 /**
  * @description: TODO 注意使用EASYExcel要注释掉poi

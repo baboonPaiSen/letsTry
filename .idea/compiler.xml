@@ -16,8 +16,8 @@
         <module name="regexp" />
         <module name="eureka01" />
         <module name="elasticsearch" />
-        <module name="itextpdf" />
         <module name="stream" />
+        <module name="itextpdf" />
         <module name="jidong" />
         <module name="java" />
         <module name="rabbitMq" />

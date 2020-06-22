@@ -1,6 +1,5 @@
 package write;
 
-import java.awt.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.net.URL;
@@ -12,9 +11,9 @@ import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.ExcelWriter;
 import com.alibaba.excel.write.metadata.WriteSheet;
 import org.junit.Test;
-import pojo.DemoData;
-import pojo.ImageData;
-import pojo.WidthAndHeightData;
+import com.gsk.pojo.pojo.DemoData;
+import com.gsk.pojo.pojo.ImageData;
+import com.gsk.pojo.pojo.WidthAndHeightData;
 
 /**
  * @description: TODO

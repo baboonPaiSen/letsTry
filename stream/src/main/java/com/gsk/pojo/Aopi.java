@@ -1,4 +1,4 @@
-package pojo;
+package com.gsk.pojo;
 
 
 import javax.persistence.GeneratedValue;

@@ -11,7 +11,7 @@
         <id column="user_id" property="id"/>
         <result column="user_id" property="uid"/>
         <result column="user_id" property="money"/>
-        <association property="user" javaType="com.gsk.mybatis.pojo.User">
+        <association property="user" javaType="com.gsk.mybatis.com.gsk.pojo.pojo.User">
             <id column="user_id" property="id"/>
             <result column="user_id" property="username"/>
             <result column="user_birthday" property="birthday"/>

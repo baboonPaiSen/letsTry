@@ -1,4 +1,4 @@
-package pojo;
+package com.gsk.pojo.pojo;
 
 import com.alibaba.excel.annotation.ExcelProperty;
 import com.alibaba.excel.converters.string.StringImageConverter;

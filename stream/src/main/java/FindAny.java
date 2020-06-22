@@ -1,7 +1,7 @@
 import java.util.*;
 
 import org.junit.Test;
-import pojo.Student;
+import com.gsk.pojo.pojo.Student;
 
 /**
  * @description: TODO

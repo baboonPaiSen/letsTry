@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gsk.mybatis.mapper.AppMapper">
-  <resultMap id="BaseResultMap" type="com.gsk.mybatis.pojo.App">
+  <resultMap id="BaseResultMap" type="com.gsk.mybatis.com.gsk.pojo.pojo.App">
     <!--@mbg.generated-->
     <!--@Table app-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -35,7 +35,7 @@
     delete from app
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.gsk.mybatis.pojo.App">
+  <insert id="insert" parameterType="com.gsk.mybatis.com.gsk.pojo.pojo.App">
     <!--@mbg.generated-->
     insert into app (id, version_code, version_string, 
       message, url, `size`, 
@@ -48,7 +48,7 @@
       #{minimumVersionString,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, #{createdAt,jdbcType=TIMESTAMP}, 
       #{updatedAt,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.gsk.mybatis.pojo.App">
+  <insert id="insertSelective" parameterType="com.gsk.mybatis.com.gsk.pojo.pojo.App">
     <!--@mbg.generated-->
     insert into app
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -134,7 +134,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.gsk.mybatis.pojo.App">
+  <update id="updateByPrimaryKeySelective" parameterType="com.gsk.mybatis.com.gsk.pojo.pojo.App">
     <!--@mbg.generated-->
     update app
     <set>
@@ -177,7 +177,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.gsk.mybatis.pojo.App">
+  <update id="updateByPrimaryKey" parameterType="com.gsk.mybatis.com.gsk.pojo.pojo.App">
     <!--@mbg.generated-->
     update app
     set version_code = #{versionCode,jdbcType=INTEGER},

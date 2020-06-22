@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gsk.mybatis.mapper.TbCategoryMapper">
-  <resultMap id="BaseResultMap" type="com.gsk.mybatis.pojo.TbCategory">
+  <resultMap id="BaseResultMap" type="com.gsk.mybatis.com.gsk.pojo.pojo.TbCategory">
     <!--@mbg.generated-->
     <!--@Table tb_category-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -26,14 +26,14 @@
     delete from tb_category
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gsk.mybatis.pojo.TbCategory" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.gsk.mybatis.com.gsk.pojo.pojo.TbCategory" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into tb_category (`name`, parent_id, is_parent, 
       sort)
     values (#{name,jdbcType=VARCHAR}, #{parentId,jdbcType=BIGINT}, #{isParent,jdbcType=BOOLEAN}, 
       #{sort,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.gsk.mybatis.pojo.TbCategory" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.gsk.mybatis.com.gsk.pojo.pojo.TbCategory" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into tb_category
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -65,7 +65,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.gsk.mybatis.pojo.TbCategory">
+  <update id="updateByPrimaryKeySelective" parameterType="com.gsk.mybatis.com.gsk.pojo.pojo.TbCategory">
     <!--@mbg.generated-->
     update tb_category
     <set>
@@ -84,7 +84,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.gsk.mybatis.pojo.TbCategory">
+  <update id="updateByPrimaryKey" parameterType="com.gsk.mybatis.com.gsk.pojo.pojo.TbCategory">
     <!--@mbg.generated-->
     update tb_category
     set `name` = #{name,jdbcType=VARCHAR},

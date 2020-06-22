@@ -9,7 +9,7 @@
             image,
             letter
     </sql>
-    <resultMap id="BaseResultMap" type="com.gsk.mybatis.pojo.TbBrand">
+    <resultMap id="BaseResultMap" type="com.gsk.mybatis.com.gsk.pojo.pojo.TbBrand">
         <result column="id" property="id"/>
         <result column="name" property="name"/>
         <result column="image" property="image"/>
@@ -20,7 +20,7 @@
         <result column="tb_brand_name" property="name"/>
         <result column="tb_brand_image" property="image"/>
         <result column="tb_brand_letter" property="letter"/>
-        <collection property="categoryList" ofType="com.gsk.mybatis.pojo.TbCategory" columnPrefix="tb_category_">
+        <collection property="categoryList" ofType="com.gsk.mybatis.com.gsk.pojo.pojo.TbCategory" columnPrefix="tb_category_">
             <id column="id" property="id"/>
             <result column="name" property="name"/>
             <result column="parent_id" property="parentId"/>

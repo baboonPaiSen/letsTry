@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gsk.mybatis.mapper.WorkStudentMapper">
-  <resultMap id="BaseResultMap" type="com.gsk.mybatis.pojo.WorkStudent">
+  <resultMap id="BaseResultMap" type="com.gsk.mybatis.com.gsk.pojo.pojo.WorkStudent">
     <!--@mbg.generated-->
     <!--@Table work_student-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -38,7 +38,7 @@
     delete from work_student
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.gsk.mybatis.pojo.WorkStudent">
+  <insert id="insert" parameterType="com.gsk.mybatis.com.gsk.pojo.pojo.WorkStudent">
     <!--@mbg.generated-->
     insert into work_student (id, work_id, student_id, 
       commit_time, corrected, match_status, 
@@ -53,7 +53,7 @@
       #{isRejected,jdbcType=TINYINT}, #{rejectedReason,jdbcType=VARCHAR}, #{createdAt,jdbcType=TIMESTAMP}, 
       #{updatedAt,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.gsk.mybatis.pojo.WorkStudent">
+  <insert id="insertSelective" parameterType="com.gsk.mybatis.com.gsk.pojo.pojo.WorkStudent">
     <!--@mbg.generated-->
     insert into work_student
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -151,7 +151,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.gsk.mybatis.pojo.WorkStudent">
+  <update id="updateByPrimaryKeySelective" parameterType="com.gsk.mybatis.com.gsk.pojo.pojo.WorkStudent">
     <!--@mbg.generated-->
     update work_student
     <set>
@@ -200,7 +200,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.gsk.mybatis.pojo.WorkStudent">
+  <update id="updateByPrimaryKey" parameterType="com.gsk.mybatis.com.gsk.pojo.pojo.WorkStudent">
     <!--@mbg.generated-->
     update work_student
     set work_id = #{workId,jdbcType=BIGINT},
@@ -246,7 +246,7 @@
     <result column="assistant_id" property="assistantId"/>
     <result column="created_at" property="createdAt"/>
     <result column="updated_at" property="updatedAt"/>
-    <association property="workStudent" javaType="com.gsk.mybatis.pojo.WorkStudent" columnPrefix="work_student_">      <id column="id" property="id"/>
+    <association property="workStudent" javaType="com.gsk.mybatis.com.gsk.pojo.pojo.WorkStudent" columnPrefix="work_student_">      <id column="id" property="id"/>
       <result column="work_id" property="workId"/>
       <result column="student_id" property="studentId"/>
       <result column="commit_time" property="commitTime"/>

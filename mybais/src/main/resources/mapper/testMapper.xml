@@ -4,11 +4,11 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
  <mapper namespace="com.gsk.mybatis.mapper.TeachMapper">
-    <select id="findAll" resultType="com.gsk.mybatis.pojo.Teachplan">
+    <select id="findAll" resultType="com.gsk.mybatis.com.gsk.pojo.pojo.Teachplan">
         select * from teachplan
     </select>
 
-    <insert id="insert" parameterType="com.gsk.mybatis.pojo.Teachplan">
+    <insert id="insert" parameterType="com.gsk.mybatis.com.gsk.pojo.pojo.Teachplan">
         insert into teachplan (id, pname, parentid, grade, ptype, description,
         timelength, courseid, orderby, status, trylearn) value (#{id}, #{pname}, #{parentid},
         #{grade}, #{ptype}, #{description},#{timelength}, #{courseid}, #{orderby}, #{status}, #{trylearn})
@@ -19,7 +19,7 @@
 
     </insert>
 
-    <update id="update" parameterType="com.gsk.mybatis.pojo.Teachplan">
+    <update id="update" parameterType="com.gsk.mybatis.com.gsk.pojo.pojo.Teachplan">
         update  teachplan set pname=#{panme},status=#{status} where id =#{id}
     </update>
 
@@ -30,12 +30,12 @@
 
 
     <!--条件查询-->
-    <select id="selectById" parameterType="String" resultType="com.gsk.mybatis.pojo.Teachplan">
+    <select id="selectById" parameterType="String" resultType="com.gsk.mybatis.com.gsk.pojo.pojo.Teachplan">
         select * from  teachplan where  id = #{b}
     </select>
 
 
-    <select id="selectByPnameLike" parameterType="String" resultType="com.gsk.mybatis.pojo.Teachplan">
+    <select id="selectByPnameLike" parameterType="String" resultType="com.gsk.mybatis.com.gsk.pojo.pojo.Teachplan">
 
         select * from  teachplan  where  pname like #{b}
 

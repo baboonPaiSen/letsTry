@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gsk.mybatis.mapper.SchoolMapper">
-  <resultMap id="BaseResultMap" type="com.gsk.mybatis.pojo.School">
+  <resultMap id="BaseResultMap" type="com.gsk.mybatis.com.gsk.pojo.pojo.School">
     <!--@mbg.generated-->
     <!--@Table school-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -33,7 +33,7 @@
     delete from school
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.gsk.mybatis.pojo.School">
+  <insert id="insert" parameterType="com.gsk.mybatis.com.gsk.pojo.pojo.School">
     <!--@mbg.generated-->
     insert into school (id, `name`, simple_name, 
       province, city, district, 
@@ -44,7 +44,7 @@
       #{type,jdbcType=TINYINT}, #{adminId,jdbcType=BIGINT}, #{status,jdbcType=TINYINT}, 
       #{createdAt,jdbcType=TIMESTAMP}, #{updatedAt,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.gsk.mybatis.pojo.School">
+  <insert id="insertSelective" parameterType="com.gsk.mybatis.com.gsk.pojo.pojo.School">
     <!--@mbg.generated-->
     insert into school
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -118,7 +118,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.gsk.mybatis.pojo.School">
+  <update id="updateByPrimaryKeySelective" parameterType="com.gsk.mybatis.com.gsk.pojo.pojo.School">
     <!--@mbg.generated-->
     update school
     <set>
@@ -155,7 +155,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.gsk.mybatis.pojo.School">
+  <update id="updateByPrimaryKey" parameterType="com.gsk.mybatis.com.gsk.pojo.pojo.School">
     <!--@mbg.generated-->
     update school
     set `name` = #{name,jdbcType=VARCHAR},

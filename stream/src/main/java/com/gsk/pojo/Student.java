@@ -1,6 +1,5 @@
-package pojo;
+package com.gsk.pojo;
 
-import lombok.Setter;
 import lombok.ToString;
 
 @ToString

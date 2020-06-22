@@ -7,7 +7,7 @@ spring:
     password: Ge_shangkun1
 
 mybatis:
-  type-aliases-package: com.gsk.mybatis.pojo
+  type-aliases-package: com.gsk.mybatis.com.gsk.pojo.pojo
   mapper-locations: classpath:mapper/*Mapper.xml
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
